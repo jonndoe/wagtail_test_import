@@ -1,6 +1,6 @@
 This project is downloading the xml data into wagtail cms
 
- - activate home/habrauser/PycharmProjects/bakerydemo-test-setup/env38_python_complete
+ - activate conda env38_wagtail_test_import
 
  - python mainproject/manage.py load-xml  => this will take a lot of time.
 

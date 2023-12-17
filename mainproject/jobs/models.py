@@ -13,12 +13,17 @@ class JobsIndexPage(Page):
 
 
 class JobPage(Page):
-    locationname = models.CharField(max_length=250)
     locationcode = models.CharField(max_length=20)
-    datedone = models.DateField("Last done date")
+    locationname = models.CharField(max_length=250)
+    jobcode = models.CharField(max_length=10)
     datedue = models.DateField("Next due date")
+    datedone = models.DateField("Last done date")
+    jobtitle = models.CharField(max_length=60)
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
+    subsystem = models.CharField(max_length=120)
+    vessel_comment = RichTextField(blank=True)
+    responsible_crew = models.CharField(max_length=30)
 
     search_fields = Page.search_fields + [
         index.SearchField("intro"),
