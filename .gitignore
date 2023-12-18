@@ -13,7 +13,7 @@ package-lock.json
 **/.envs/*
 
 ./parsed.txt
-
+parsed.txt
 
 ### Python template
 # Byte-compiled / optimized / DLL files
