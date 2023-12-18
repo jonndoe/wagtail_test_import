@@ -12,6 +12,7 @@ package-lock.json
 **/build/*
 **/.envs/*
 
+./parsed.txt
 
 
 ### Python template
