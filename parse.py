@@ -15,7 +15,7 @@ def print_nodes_2(parent):
     jobs.append(locations)
     jobs_library_crew_var = "nocrew"
     jobs_library_crew_list = []
-    jobs_library_crew_set = {"2", "3"}
+    jobs_library_crew_set = {"rrrrr"}
 
     for group1 in parent:
         for group2 in group1:  # location_code  AND   All_jobs_long_v7_group2 in group1
@@ -47,7 +47,7 @@ def print_nodes_2(parent):
                                     if group5.tag == "jobs_library_crew":
                                         jobs_library_crew_var = group5.text
                                         jobs_library_crew_list.append(group5.text)
-                                    if group5.tag != "jobs_library_crew":
+                                    elif group5.tag != "jobs_library_crew":
                                         print(
                                             "++++++++++++++++++++++++++++++++++++++++++++++STARTED JOB++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
                                         )
@@ -61,6 +61,12 @@ def print_nodes_2(parent):
                                                 "responsible_crew"
                                             ] = "Chief Officer"
                                             jobs_library_crew_set.add("Chief Officer")
+                                        elif jobs_library_crew_var == "6":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Chief Officer"
+                                            jobs_library_crew_set.add("Chief Officer")
+                                            pass
                                         elif jobs_library_crew_var == "MAS":
                                             job_dict["responsible_crew"] = "Master"
                                             jobs_library_crew_set.add("Master")
@@ -76,6 +82,54 @@ def print_nodes_2(parent):
                                                 "responsible_crew"
                                             ] = "Third Officer"
                                             jobs_library_crew_set.add("Third Officer")
+                                            pass
+                                        elif jobs_library_crew_var == "E":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Chief Engineer"
+                                            jobs_library_crew_set.add("Chief Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "R":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Fourth Engineer"
+                                            jobs_library_crew_set.add("Fourth Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "2":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Officer"
+                                            jobs_library_crew_set.add("Second Officer")
+                                            pass
+                                        elif jobs_library_crew_var == "7":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Gas Engineer"
+                                            jobs_library_crew_set.add("Gas Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "3":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Engineer"
+                                            jobs_library_crew_set.add("Second Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "1":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Engineer"
+                                            jobs_library_crew_set.add("Second Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "5":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Engineer"
+                                            jobs_library_crew_set.add("Second Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "G":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Third Engineer"
+                                            jobs_library_crew_set.add("Third Engineer")
                                             pass
                                         else:
                                             job_dict[
@@ -112,8 +166,18 @@ def print_nodes_2(parent):
     for location in locations:
         print("")
         for job in location[1:]:
+            print(
+                "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            )
             for x, y in job.items():
-                print(x, "---->", y)
+                if x == "responsible_crew":
+                    print(x, "---->", y)
+                elif x == "vessel_comment":
+                    print(x, "----->", y)
+                elif x == "jobs_library_job_title":
+                    print(x, "----->", y)
+                elif x == "system_subsystems_subsystem_description":
+                    print(x, "----->", y)
             print(" ")
         print("")
         print("")
