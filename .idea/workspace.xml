@@ -5,39 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2342abed-c40f-4060-ab7d-9201daa65249" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/wagtail-test-import.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load-xml-to-wagtail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load-xml-wagtail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/home/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/home/static/css/welcome_page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/home/templates/home/home_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/home/templates/home/welcome_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/jobs/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/jobs/management/commands/load-xml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/mainproject/settings/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/mainproject/settings/dev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/mainproject/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/mainproject/templates/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/mainproject/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/mainproject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/search/templates/search/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainproject/search/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pre-commit-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all_jobs.XML" beforeDir="false" afterPath="$PROJECT_DIR$/all_jobs.XML" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainproject/jobs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_jobs_v2.XML" beforeDir="false" afterPath="$PROJECT_DIR$/all_jobs_v2.XML" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/parsed.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,14 +35,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/habrauser/PycharmProjects/learn_wagtail/env38_python_complete/bin/python",
-    "settings.editor.selected.configurable": "editing.templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/habrauser/PycharmProjects/learn_wagtail/env38_python_complete/bin/python&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

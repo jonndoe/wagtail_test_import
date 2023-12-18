@@ -1,0 +1,3 @@
+locations = {}
+
+locations.pop("jonn")
