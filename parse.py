@@ -5,10 +5,8 @@ root = tree.getroot()
 
 locations = []
 jobs = []
-location_code_text = "no_name"
 jobs_library_periodicity_id_2 = []
 jobs.append(locations)
-jobs_library_crew_var = "nocrew"
 jobs_library_crew_list = []
 jobs_library_crew_set = {"rrrrr"}
 system_subsystems_subsystem_description_set = {"aaa"}
@@ -93,6 +91,8 @@ def create_jobs_list_frame(parent):
         if group1.tag != "vessel_code":
             locations_counter += 1
 
+
+"""
     for location in locations:
         print(location[0])
         pass
@@ -105,8 +105,238 @@ def create_jobs_list_frame(parent):
                 pass
     for location in locations:
         print(location)
+"""
 
 
+def add_jobs_to_jobs_list_frame(parent):
+    total_jobs_counter = 0
+    locations_counter = 0
+
+    for group1 in parent:
+        for group2 in group1:  # location_code  AND   All_jobs_long_v7_group2 in group1
+            if group2.tag == "location_code":
+                location_code_text = group2.text
+                pass
+                # create corresponding wagtail_page here for each location
+            else:  # group2.tag != "location_code":
+                for group3 in group2:  # job_type and All_jobs_long_v7_group3 in group2
+                    if group3.tag == "job_type":
+                        job_type = []
+                        job_type.append(group3.text)
+                        pass
+                    else:
+                        for (
+                            group4
+                        ) in (
+                            group3
+                        ):  # for subsystem_code and All_jobs_long_v7_group4 in group3
+                            if group4.tag == "subsystem_code":
+                                pass
+                            if group4.tag != "subsystem_code":
+                                for group5 in group4:  # For each job in group4
+                                    if group5.tag == "jobs_library_crew":
+                                        jobs_library_crew_var = group5.text
+                                        pass
+                                    elif group5.tag != "jobs_library_crew":
+                                        # print(
+                                        #    "++++++++++++++++++++++++++++++++++++++++++++++STARTED JOB++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+                                        # )
+                                        # print("entered job:", total_jobs_counter)
+                                        job_dict = {}
+                                        job_dict["job_id"] = total_jobs_counter
+                                        job_dict["location"] = location_code_text
+                                        for field in group5:  # For each field in job
+                                            if (
+                                                field.tag
+                                                == "system_subsystems_subsystem_description"
+                                            ):
+                                                job_dict["sub_location"] = field.text
+                                                pass
+
+                                        if jobs_library_crew_var == "O":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Chief Officer"
+                                            jobs_library_crew_set.add("Chief Officer")
+                                        elif jobs_library_crew_var == "6":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Chief Officer"
+                                            jobs_library_crew_set.add("Chief Officer")
+                                            pass
+                                        elif jobs_library_crew_var == "MAS":
+                                            job_dict["responsible_crew"] = "Master"
+                                            jobs_library_crew_set.add("Master")
+                                        elif jobs_library_crew_var == "ELE":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Electro Engineer"
+                                            jobs_library_crew_set.add(
+                                                "Electro Engineer"
+                                            )
+                                        elif jobs_library_crew_var == "4":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Third Officer"
+                                            jobs_library_crew_set.add("Third Officer")
+                                            pass
+                                        elif jobs_library_crew_var == "E":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Chief Engineer"
+                                            jobs_library_crew_set.add("Chief Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "R":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Fourth Engineer"
+                                            jobs_library_crew_set.add("Fourth Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "2":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Officer"
+                                            jobs_library_crew_set.add("Second Officer")
+                                            pass
+                                        elif jobs_library_crew_var == "7":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Gas Engineer"
+                                            jobs_library_crew_set.add("Gas Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "3":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Engineer"
+                                            jobs_library_crew_set.add("Second Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "1":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Engineer"
+                                            jobs_library_crew_set.add("Second Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "5":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Second Engineer"
+                                            jobs_library_crew_set.add("Second Engineer")
+                                            pass
+                                        elif jobs_library_crew_var == "G":
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = "Third Engineer"
+                                            jobs_library_crew_set.add("Third Engineer")
+                                            pass
+                                        else:
+                                            job_dict[
+                                                "responsible_crew"
+                                            ] = jobs_library_crew_var
+                                            jobs_library_crew_set.add(
+                                                jobs_library_crew_var
+                                            )
+
+                                        for field in group5:  # For each field in job
+                                            job_dict[field.tag] = field.text
+                                        # print("job_dict created!---------------------------------------------------------")
+                                        # print(job_dict)
+
+                                        check_this_list = []
+                                        check_this_list.append(
+                                            job_dict[
+                                                "system_subsystems_subsystem_description"
+                                            ]
+                                        )
+                                        if (
+                                            check_this_list
+                                            in locations[locations_counter][1:]
+                                        ):
+                                            pass
+
+                                        for l1 in locations[locations_counter][1:]:
+                                            s = job_dict[
+                                                "system_subsystems_subsystem_description"
+                                            ]
+                                            if s == l1[0]:
+                                                l1.append(job_dict)
+
+                                        # you need to find the index in this list and append the job_dict to it
+                                        # based on found index
+                                        """
+                                        for l1 in locations[locations_counter][1:]:
+                                                print("l1 is ------------->>>>>>>>>>>>>>>>>>>>>>>", l1)
+                                                s = job_dict["system_subsystems_subsystem_description"]
+                                                matched_indexes = []
+                                                i = 0
+                                                length = len(l1)
+
+                                                while i < length:
+                                                    if s == l1[i]:
+                                                        matched_indexes.append(i)
+                                                        #locations[locations_counter][1:][i].append(job_dict)
+                                                        l1.append(job_dict)
+                                                    i += 1
+
+                                                #print("Matched indexes------------------------------------>",
+                                                     # matched_indexes)
+                                        """
+
+                                        """
+                                        l1 = locations[locations_counter][1:][0]
+
+                                        print("string", job_dict["system_subsystems_subsystem_description"])
+                                        s = job_dict["system_subsystems_subsystem_description"]
+                                        matched_indexes = []
+                                        i = 0
+
+                                        length = len(l1)
+
+                                        while i < length:
+                                            if s == l1[i]:
+                                                matched_indexes.append(i)
+                                                locations[locations_counter][1:][i].append(job_dict)
+                                            i += 1
+
+                                        print("Matched indexes------------------------------------>", matched_indexes)
+                                        """
+
+                                        total_jobs_counter += 1
+
+        if group1.tag != "vessel_code":
+            locations_counter += 1
+
+
+# Create an empty frame prepared for adding jobs to it.
+create_jobs_list_frame(root[0])
+
+# Add actual jobs to this frame
+add_jobs_to_jobs_list_frame(root[0])
+
+
+for location in locations:
+    print(" ")
+    print(" ")
+    print(" ")
+    print(location[0])
+    for sub_location in location[1:]:
+        for job in sub_location:
+            print(job)
+
+
+"""
+for location in locations:
+    print(location[0])
+    for sub_location in location[1:]:
+        print(sub_location[0])
+        for job in sub_location[1:]:
+            print(job)
+            pass
+    print(" ")
+    print(" ")
+    print(" ")
+"""
+
+"""
 def print_nodes_2(parent):
     total_jobs_counter = 0
     locations_counter = 0
@@ -291,4 +521,5 @@ def print_nodes_2(parent):
 
 
 # print_nodes_2(root[0])
-create_jobs_list_frame(root[0])
+
+"""
