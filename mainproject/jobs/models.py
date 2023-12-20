@@ -31,7 +31,7 @@ class JobPage(Page):
     datedone = models.DateField("Last done date")
     jobtitle = models.CharField(max_length=60, blank=True)
     intro = models.CharField(max_length=250, blank=True)
-    body = RichTextField(blank=True)
+    body = models.TextField(blank=True)
     subsystem = models.CharField(max_length=120, blank=True)
     vessel_comment = RichTextField(blank=True)
     responsible_crew = models.CharField(max_length=30, blank=True)

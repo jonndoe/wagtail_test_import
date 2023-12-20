@@ -159,7 +159,7 @@ class Command(BaseCommand):
                                                                 + title
                                                                 + str(
                                                                     random.randint(
-                                                                        2, 5000
+                                                                        2, 500000
                                                                     )
                                                                 )
                                                             )
@@ -181,6 +181,7 @@ class Command(BaseCommand):
         def add_jobs_to_jobs_list_frame(parent):
             total_jobs_counter = 0
             locations_counter = 0
+            failures_counter = 0
 
             for group1 in parent:
                 for (
@@ -212,6 +213,9 @@ class Command(BaseCommand):
                                                 jobs_library_crew_var = group5.text
                                                 pass
                                             elif group5.tag != "jobs_library_crew":
+                                                print(
+                                                    "Started adding job to sub_location++++++++++++++++++++++++"
+                                                )
                                                 job_dict = {}
                                                 job_dict["job_id"] = total_jobs_counter
                                                 job_dict[
@@ -323,17 +327,88 @@ class Command(BaseCommand):
                                                     ]
                                                     if s == l1[0]:
                                                         l1.append(job_dict)
+                                                        # create the job page here and add to corresponding sub_page
+                                                        sub_location_page = JobsIndexPage.objects.filter(
+                                                            title=s
+                                                        ).first()
+                                                        print(sub_location_page)
+                                                        jobpage_content_type = ContentType.objects.get_for_model(
+                                                            JobPage
+                                                        )
+                                                        title = "JOB " + s
+                                                        intro = (
+                                                            "this is intro for "
+                                                            + title
+                                                            + str(
+                                                                random.randint(
+                                                                    2, 500000
+                                                                )
+                                                            )
+                                                        )
+                                                        slug = slugify(intro)
+                                                        try:
+                                                            job_page = JobPage(
+                                                                locationname=job_dict[
+                                                                    "location"
+                                                                ],
+                                                                locationcode=job_dict[
+                                                                    "unpostponable_job"
+                                                                ],
+                                                                datedone=time.strftime(
+                                                                    "%Y-%m-%d",
+                                                                    time.localtime(),
+                                                                ),
+                                                                datedue=time.strftime(
+                                                                    "%Y-%m-%d",
+                                                                    time.localtime(),
+                                                                ),
+                                                                intro=intro,
+                                                                body=job_dict[
+                                                                    "jobs_library_job_particulars"
+                                                                ],
+                                                                title=title,
+                                                                slug=slug,
+                                                                content_type=jobpage_content_type,
+                                                            )
+                                                            sub_location_page.add_child(
+                                                                instance=job_page
+                                                            )
+                                                            print(
+                                                                "Job ----> "
+                                                                + str(
+                                                                    total_jobs_counter
+                                                                )
+                                                                + " is done!!!"
+                                                                + str(
+                                                                    job_dict[
+                                                                        "jobs_library_job_particulars"
+                                                                    ]
+                                                                )
+                                                            )
+                                                            print(" ")
+                                                            print(" ")
+                                                            print(" ")
+                                                        except:
+                                                            print(
+                                                                "Failed to add the job"
+                                                                + str(
+                                                                    total_jobs_counter
+                                                                )
+                                                            )
+                                                            failures_counter += 1
 
                                                 total_jobs_counter += 1
 
                 if group1.tag != "vessel_code":
                     locations_counter += 1
 
+            print("Failures counter :", failures_counter)
+
         # Create an empty frame prepared for adding jobs to it.
         create_jobs_list_frame(root[0])
 
         # Add actual jobs to this frame
-        # add_jobs_to_jobs_list_frame(root[0])
+        add_jobs_to_jobs_list_frame(root[0])
 
         """
         # For each job in xml file, create a new jobpage
