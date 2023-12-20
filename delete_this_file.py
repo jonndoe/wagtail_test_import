@@ -1,3 +1,0 @@
-locations = {}
-
-locations.pop("jonn")

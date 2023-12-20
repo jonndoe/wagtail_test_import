@@ -6,7 +6,7 @@ from xml.dom.minidom import Node, parse
 from django.contrib.contenttypes.models import ContentType
 from django.core.management.base import BaseCommand, CommandError
 from django.template.defaultfilters import slugify
-from jobs.models import JobPage, JobsIndexPage
+from jobs.models import JobPage, JobsIndexPage, LocationPage, SubLocationPage
 
 
 class Command(BaseCommand):

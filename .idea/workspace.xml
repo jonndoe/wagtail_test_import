@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2342abed-c40f-4060-ab7d-9201daa65249" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/parsed.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete_this_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainproject/jobs/management/commands/load-xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainproject/jobs/management/commands/load-xml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainproject/jobs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainproject/jobs/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/habrauser/PycharmProjects/learn_wagtail/wagtail-test-import",
-    "settings.editor.selected.configurable": "editing.templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/habrauser/PycharmProjects/learn_wagtail/wagtail-test-import&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
