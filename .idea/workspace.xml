@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2342abed-c40f-4060-ab7d-9201daa65249" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_jobs.XML" beforeDir="false" afterPath="$PROJECT_DIR$/all_jobs.XML" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/home/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/home/migrations/0002_create_homepage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/home/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/management/commands/load-xml-v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainproject/jobs/management/commands/load-xml-v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/migrations/0002_jobpage_jobcode_jobpage_jobtitle_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/migrations/0003_locationpage_sublocationpage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainproject/jobs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainproject/jobs/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="2342abed-c40f-4060-ab7d-9201daa65249" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-tree = ET.parse("all_jobs_v2.XML")
+tree = ET.parse("all_jobs.XML")
 root = tree.getroot()
 
 locations = []
